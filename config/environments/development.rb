@@ -20,8 +20,8 @@ Rails.application.configure do
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
-    api_key: ENV['0188bc99f46146d36007e22a303503b4-898ca80e-23b973cb'],
-    domain: ENV['sandbox556acd739b304c6fb05d4b7207a12fa6.mailgun.org'],
+    api_key: ENV['mailgun_key'],
+    domain: ENV['mailgun_domain'],
   }
 
   # Print deprecation notices to the Rails logger.
