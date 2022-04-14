@@ -4,7 +4,9 @@ class BlocksController < ApplicationController
   respond_to :json
 
   def destroy
-    Block.find(params[:id]).destroy
+    block = Block.find(params[:id]).destroy
+    course = block.course
+    DeletedTimelineNotification.new(course)
     render plain: '', status: :ok
   end
 end
