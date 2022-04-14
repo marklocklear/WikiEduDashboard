@@ -706,6 +706,10 @@ describe CoursesController, type: :request do
       expect(course.weeks.count).to eq(0)
       expect(response.status).to eq(200)
     end
+
+    it 'sends email to admins' do
+      #TODO we need a test for this
+    end
   end
 
   describe '#alerts' do
