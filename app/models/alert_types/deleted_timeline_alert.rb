@@ -27,6 +27,16 @@ class DeletedTimelineAlert < Alert
   end
 
   def url
-    course_url
+    course.url
+  end
+
+  def resolvable?
+    !resolved
+  end
+
+  def resolve_explanation
+    <<~EXPLANATION
+      It appears you have removed either the timeline, week or block from your course.
+    EXPLANATION
   end
 end

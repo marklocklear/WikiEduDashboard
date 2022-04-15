@@ -20,6 +20,10 @@ class AlertMailerPreview < ActionMailer::Preview
     AlertMailer.alert(Alert.where(type: 'NeedHelpAlert').last, example_user)
   end
 
+  def deleted_timeline_alert
+    AlertMailer.alert(Alert.where(type: 'DeletedTimelineAlert').last, example_user)
+  end
+
   def over_enrollment_alert
     AlertMailer.alert(example_over_enrollment_alert, example_user)
   end
